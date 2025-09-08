@@ -1,22 +1,7 @@
 defmodule FileStat do
   use Rustler, otp_app: :file_stat, crate: :filestat
 
-  def add(_a, _b), do: :erlang.nif_error(:nif_not_loaded)
+  defstruct type: :regular, ctime: nil, atime: nil, mtime: nil, size: 0, mode: 1
 
-  @moduledoc """
-  Documentation for `FileStat`.
-  """
-
-  @doc """
-  Hello world.
-
-  ## Examples
-
-      iex> FileStat.hello()
-      :world
-
-  """
-  def hello do
-    :world
-  end
+  def stat(_path), do: :erlang.nif_error(:nif_not_loaded)
 end
