@@ -1,4 +1,4 @@
-defmodule FileStat.MixProject do
+defmodule FileStatx.MixProject do
   use Mix.Project
 
   def project do

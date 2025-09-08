@@ -1,6 +1,8 @@
-# FileStat
+# FileStatx
 
-**TODO: Add description**
+Implements an alternative to `File.stat/1` via a rust NIF.
+
+This version comes with correct file creation (birth) timestamps, which are not optainable via the standard library.
 
 ## Installation
 
@@ -18,4 +20,3 @@ end
 Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
 and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
 be found at <https://hexdocs.pm/file_stat>.
-

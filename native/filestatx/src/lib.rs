@@ -13,8 +13,8 @@ enum FileType {
 }
 
 #[derive(Debug, NifStruct)]
-#[module = "FileStat"]
-struct FileStat {
+#[module = "FileStatx"]
+struct FileStatx {
     r#type: FileType,
     atime: Option<u128>,
     ctime: Option<u128>,
@@ -24,10 +24,10 @@ struct FileStat {
 }
 
 #[rustler::nif]
-fn stat(path: String) -> Result<FileStat, String> {
+fn stat(path: String) -> Result<FileStatx, String> {
     let metadata = fs::metadata(path).map_err(|err| err.to_string())?;
     println!("{metadata:?}");
-    Ok(FileStat {
+    Ok(FileStatx {
         r#type: get_file_type(&metadata),
         ctime: metadata.created().ok().and_then(to_unix),
         mtime: metadata.modified().ok().and_then(to_unix),
@@ -52,4 +52,4 @@ fn get_file_type(m: &Metadata) -> FileType {
     }
 }
 
-rustler::init!("Elixir.FileStat");
+rustler::init!("Elixir.FileStatx");

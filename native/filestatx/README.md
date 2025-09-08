@@ -1,4 +1,4 @@
-# NIF for FileStat
+# NIF for FileStatx
 
 ## To build the NIF module:
 
@@ -7,8 +7,8 @@
 ## To load the NIF:
 
 ```elixir
-defmodule FileStat do
-  use Rustler, otp_app: :file_stat, crate: "filestat"
+defmodule FileStatx do
+  use Rustler, otp_app: :file_stat, crate: "filestatx"
 
   # When your NIF is loaded, it will override this function.
   def add(_a, _b), do: :erlang.nif_error(:nif_not_loaded)

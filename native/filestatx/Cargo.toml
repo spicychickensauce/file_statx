@@ -1,11 +1,11 @@
 [package]
-name = "filestat"
+name = "filestatx"
 version = "0.1.0"
 authors = []
 edition = "2021"
 
 [lib]
-name = "filestat"
+name = "filestatx"
 crate-type = ["cdylib"]
 
 [dependencies]
