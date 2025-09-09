@@ -8,7 +8,7 @@
 
 ```elixir
 defmodule FileStatx do
-  use Rustler, otp_app: :file_stat, crate: "filestatx"
+  use Rustler, otp_app: :file_statx, crate: "filestatx"
 
   # When your NIF is loaded, it will override this function.
   def add(_a, _b), do: :erlang.nif_error(:nif_not_loaded)

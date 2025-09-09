@@ -2,7 +2,7 @@ defmodule FileStatx do
   @external_resource "README.md"
   @moduledoc File.read!("README.md")
 
-  use Rustler, otp_app: :file_stat, crate: :filestatx
+  use Rustler, otp_app: :file_statx, crate: :filestatx
 
   @doc """
   All timestamps are in nanoseconds since unix epoch.

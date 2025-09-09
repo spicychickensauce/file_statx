@@ -20,7 +20,7 @@ erl_crash.dump
 *.ez
 
 # Ignore package tarball (built via "mix hex.build").
-file_stat-*.tar
+file_statx-*.tar
 
 
 # Rust binary artifacts
