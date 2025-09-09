@@ -12,6 +12,13 @@ enum FileType {
     Symlink,
 }
 
+#[derive(Debug, NifTaggedEnum)]
+enum StatError {
+    Enoent,
+    Eacces,
+    Other(String),
+}
+
 #[derive(Debug, NifStruct)]
 #[module = "FileStatx"]
 struct FileStatx {
@@ -24,8 +31,8 @@ struct FileStatx {
 }
 
 #[rustler::nif]
-fn stat(path: String) -> Result<FileStatx, String> {
-    let metadata = fs::metadata(path).map_err(|err| err.to_string())?;
+fn stat(path: String) -> Result<FileStatx, StatError> {
+    let metadata = fs::metadata(path).map_err(|err| get_stat_error(&err.kind()))?;
     println!("{metadata:?}");
     Ok(FileStatx {
         r#type: get_file_type(&metadata),
@@ -49,6 +56,14 @@ fn get_file_type(m: &Metadata) -> FileType {
         FileType::Regular
     } else {
         FileType::Symlink
+    }
+}
+
+fn get_stat_error(err: &std::io::ErrorKind) -> StatError {
+    match err {
+        std::io::ErrorKind::NotFound => StatError::Enoent,
+        std::io::ErrorKind::PermissionDenied => StatError::Eacces,
+        _ => StatError::Other(err.to_string()),
     }
 }
 
