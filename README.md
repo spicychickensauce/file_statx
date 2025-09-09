@@ -3,6 +3,7 @@
 Implements an alternative to `File.stat/1` via a rust NIF.
 
 This version comes with correct file creation (birth) timestamps, which are not optainable via the standard library.
+These timestamps are only available by using the `statx` syscall, which erlang doesn't implement yet.
 
 ## Installation
 

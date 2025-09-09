@@ -6,7 +6,7 @@ defmodule FileStatx do
 
   @doc """
   All timestamps are in nanoseconds since unix epoch.
-  You can convert them to datetime via e.g: `DateTime.from_unix(stat.ctime, :nanosecond)`
+  They can be converted to datetime via e.g: `DateTime.from_unix(stat.ctime, :nanosecond)`
   """
   @type t() :: %FileStatx{
           atime: integer() | :undefined,
@@ -19,8 +19,11 @@ defmodule FileStatx do
   defstruct type: :regular, ctime: nil, atime: nil, mtime: nil, size: 0, mode: 1
 
   @doc """
+  Returns information about the path. If it exists, it returns a `{:ok, info}` tuple,
+  where info is a `FileStatx` struct. Returns `{:error, reason}` with the same reasons as `File.read/1` if a failure occurs.
 
-   See the rust docs https://doc.rust-lang.org/std/fs/struct.Metadata.html#method.created
+  See the [rust docs](https://doc.rust-lang.org/std/fs/struct.Metadata.html#method.created) on e.g.
+  how the ctime timestamp is obtained on different platforms.
   """
   @spec stat(Path.t()) :: {:ok, FileStatx.t()} | {:error, :file.posix()}
   def stat(_path), do: :erlang.nif_error(:nif_not_loaded)
