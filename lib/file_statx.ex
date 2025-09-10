@@ -1,8 +1,16 @@
 defmodule FileStatx do
+  version = Mix.Project.config()[:version]
+  env_config = Application.compile_env(:rustler_precompiled, :force_build, [])
+
   @external_resource "README.md"
   @moduledoc File.read!("README.md")
 
-  use Rustler, otp_app: :file_statx, crate: :filestatx
+  use RustlerPrecompiled,
+    otp_app: :file_statx,
+    crate: :filestatx,
+    base_url: "https://github.com/spicychickensauce/file_statx/releases/download/v#{version}",
+    force_build: System.get_env("RUSTLER_BUILD") in ["1", "true"] or env_config[:file_statx],
+    version: version
 
   @doc """
   All timestamps are in nanoseconds since unix epoch.
