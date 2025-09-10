@@ -33,7 +33,6 @@ struct FileStatx {
 #[rustler::nif]
 fn stat(path: String) -> Result<FileStatx, StatError> {
     let metadata = fs::metadata(path).map_err(|err| get_stat_error(&err.kind()))?;
-    println!("{metadata:?}");
     Ok(FileStatx {
         r#type: get_file_type(&metadata),
         ctime: metadata.created().ok().and_then(to_unix),
