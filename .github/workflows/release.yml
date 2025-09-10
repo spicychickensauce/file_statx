@@ -1,0 +1,4 @@
+# Dummy to allow workflow_dispatch on dev branch...
+name: Build precompiled NIFs
+on:
+  workflow_dispatch:
