@@ -1,5 +1,7 @@
 defmodule FileStatx do
-  version = Mix.Project.config()[:version]
+  mix_config = Mix.Project.config()
+  version = mix_config[:version]
+  github_url = mix_config[:package][:links]["GitHub"]
   env_config = Application.compile_env(:rustler_precompiled, :force_build, [])
 
   @external_resource "README.md"
@@ -8,9 +10,19 @@ defmodule FileStatx do
   use RustlerPrecompiled,
     otp_app: :file_statx,
     crate: :filestatx,
-    base_url: "https://github.com/spicychickensauce/file_statx/releases/download/v#{version}",
+    base_url: "#{github_url}/releases/download/v#{version}",
     force_build: System.get_env("RUSTLER_BUILD") in ["1", "true"] or env_config[:file_statx],
-    version: version
+    version: version,
+    targets: [
+      "aarch64-apple-darwin",
+      "aarch64-unknown-linux-gnu",
+      "aarch64-unknown-linux-musl",
+      "x86_64-apple-darwin",
+      "x86_64-unknown-linux-gnu",
+      "x86_64-unknown-linux-musl",
+      "arm-unknown-linux-gnueabihf",
+      "riscv64gc-unknown-linux-gnu"
+    ]
 
   @doc """
   All timestamps are in nanoseconds since unix epoch.
