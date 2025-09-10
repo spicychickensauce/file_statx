@@ -13,7 +13,7 @@ by adding `file_statx` to your list of dependencies in `mix.exs`:
 ```elixir
 def deps do
   [
-    {:file_statx, "~> 1.0.0"}
+    {:file_statx, "~> 1.0.1"}
   ]
 end
 ```
