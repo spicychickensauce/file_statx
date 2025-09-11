@@ -15,6 +15,7 @@ defmodule FileStatx.MixProject do
 
       # Docs
       name: "FileStatx",
+      description: "Alternative Elixir File.stat implementation using rustler NIF",
       source_url: @github_url,
       docs: [
         main: "FileStatx",

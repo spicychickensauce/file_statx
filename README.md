@@ -42,4 +42,5 @@ You also need to add `:rustler` to your dependencies.
 - On Github: releases -> new -> tag: `v{$version}` -> publish
 - Wait for artifacts to build
 - Run `mix rustler_precompiled.download FileStatx --all --print`
+- Test via: `mix hex.build --unpack` and then `elixir smoke_test_release.exs`
 - Publish to hex: `mix hex.publish`
