@@ -2,6 +2,7 @@ defmodule FileStatx.MixProject do
   use Mix.Project
 
   @version "1.0.1"
+  @github_url "https://github.com/spicychickensauce/file_statx"
 
   def project do
     [
@@ -10,7 +11,15 @@ defmodule FileStatx.MixProject do
       elixir: "~> 1.18",
       start_permanent: Mix.env() == :prod,
       package: package(),
-      deps: deps()
+      deps: deps(),
+
+      # Docs
+      name: "FileStatx",
+      source_url: @github_url,
+      docs: [
+        main: "FileStatx",
+        extras: ["README.md"]
+      ]
     ]
   end
 
@@ -23,7 +32,8 @@ defmodule FileStatx.MixProject do
   defp deps do
     [
       {:rustler, "~> 0.36.2", runtime: false, optional: true},
-      {:rustler_precompiled, "~> 0.8"}
+      {:rustler_precompiled, "~> 0.8"},
+      {:ex_doc, "~> 0.34", only: :dev, runtime: false, warn_if_outdated: true}
     ]
   end
 
@@ -38,9 +48,7 @@ defmodule FileStatx.MixProject do
         "LICENSE"
       ],
       licenses: ["MIT"],
-      links: %{
-        "GitHub" => "https://github.com/spicychickensauce/file_statx"
-      },
+      links: %{"GitHub" => @github_url},
       maintainers: ["spicychickensauce"]
     ]
   end
