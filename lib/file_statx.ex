@@ -29,11 +29,11 @@ defmodule FileStatx do
   They can be converted to datetime via e.g: `DateTime.from_unix(stat.ctime, :nanosecond)`
   """
   @type t() :: %FileStatx{
-          atime: integer() | :undefined,
-          ctime: integer() | :undefined,
-          mtime: integer() | :undefined,
-          mode: non_neg_integer() | :undefined,
-          size: non_neg_integer() | :undefined,
+          atime: integer() | nil,
+          ctime: integer() | nil,
+          mtime: integer() | nil,
+          mode: non_neg_integer() | nil,
+          size: non_neg_integer() | nil,
           type: :directory | :regular | :symlink
         }
   defstruct type: :regular, ctime: nil, atime: nil, mtime: nil, size: 0, mode: 1
