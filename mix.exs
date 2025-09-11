@@ -1,7 +1,7 @@
 defmodule FileStatx.MixProject do
   use Mix.Project
 
-  @version "1.0.1"
+  @version "1.0.2"
   @github_url "https://github.com/spicychickensauce/file_statx"
 
   def project do
