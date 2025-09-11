@@ -16,8 +16,7 @@ Other targets are not tested. Windows isn't supported at all.
 
 ## Installation
 
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `file_statx` to your list of dependencies in `mix.exs`:
+Add `file_statx` to your list of dependencies in `mix.exs`:
 
 ```elixir
 def deps do
@@ -26,6 +25,8 @@ def deps do
   ]
 end
 ```
+
+Documentation: <https://hexdocs.pm/file_statx>
 
 ## Force compilation
 
@@ -37,12 +38,8 @@ You also need to add `:rustler` to your dependencies.
 
 ## Release
 
+- Bump all versions -> merge to main
 - On Github: releases -> new -> tag: `v{$version}` -> publish
 - Wait for artifacts to build
 - Run `mix rustler_precompiled.download FileStatx --all --print`
-
-## TODO
-
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at <https://hexdocs.pm/file_statx>.
+- Publish to hex: `mix hex.publish`
