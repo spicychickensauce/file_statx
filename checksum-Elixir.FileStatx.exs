@@ -1,10 +1,10 @@
 %{
-  "libfilestatx-v1.0.2-nif-2.15-aarch64-apple-darwin.so.tar.gz" => "sha256:6841a7bd5d9dc7a4b0c28ae4d1d6a5035eaa2cce0f05e8f2e03d615524c01cb2",
-  "libfilestatx-v1.0.2-nif-2.15-aarch64-unknown-linux-gnu.so.tar.gz" => "sha256:65c7e28a3fa0657d5486eff256cb8bd7d99da703d6d2ed7c4f94e79ccbd65091",
-  "libfilestatx-v1.0.2-nif-2.15-aarch64-unknown-linux-musl.so.tar.gz" => "sha256:0f7a8e9c09bcf8020d55d989a24c8d8d905ac0b45f835109fe97dc61cb2146f0",
-  "libfilestatx-v1.0.2-nif-2.15-arm-unknown-linux-gnueabihf.so.tar.gz" => "sha256:82cfec023a524763963631ebe741a19c7dae0b4990e8e2f88e7d08f31de21e1f",
-  "libfilestatx-v1.0.2-nif-2.15-riscv64gc-unknown-linux-gnu.so.tar.gz" => "sha256:cdc90b3087051be0abf5ce16d402691ec07b659df7966a2d26a00e8249b08dfc",
-  "libfilestatx-v1.0.2-nif-2.15-x86_64-apple-darwin.so.tar.gz" => "sha256:1b61bf1c8c7d6ce3bcb9f585eb1b9bf6fc6084234bb9edafbdd160da02840867",
-  "libfilestatx-v1.0.2-nif-2.15-x86_64-unknown-linux-gnu.so.tar.gz" => "sha256:284a2aa1ed2552f5039d9e31b457e015f6f300f63579d1803b2427dcb60d4c9a",
-  "libfilestatx-v1.0.2-nif-2.15-x86_64-unknown-linux-musl.so.tar.gz" => "sha256:8d9e041c4a741a12bd5bb20f4655830c8c7f13e3a53194cf2c8c30ba6271ddb7",
+  "libfilestatx-v1.0.3-nif-2.15-aarch64-apple-darwin.so.tar.gz" => "sha256:e267dd92acd1acc945da21deb1a3d074597838e7477496c8c1abc8e843058ec8",
+  "libfilestatx-v1.0.3-nif-2.15-aarch64-unknown-linux-gnu.so.tar.gz" => "sha256:d6995a68133d7b07bd064cf9fffccc811cd223f471a35b3e7e9467f3e49272a9",
+  "libfilestatx-v1.0.3-nif-2.15-aarch64-unknown-linux-musl.so.tar.gz" => "sha256:7a5da7353aab127b6d6ad8f6e79e07d5e9df464699b8c8fc8f174f1bae355130",
+  "libfilestatx-v1.0.3-nif-2.15-arm-unknown-linux-gnueabihf.so.tar.gz" => "sha256:9a7aeaa223bf7558a12e4b0122e5472685ad2846bed3680a6dea0f27555d9f21",
+  "libfilestatx-v1.0.3-nif-2.15-riscv64gc-unknown-linux-gnu.so.tar.gz" => "sha256:e5b9d0588fd181300de9fb61df87b4404994382df6efd37fca12fcbf42daf507",
+  "libfilestatx-v1.0.3-nif-2.15-x86_64-apple-darwin.so.tar.gz" => "sha256:18c72aa1d6d57274a43b7cd5842dc9a9fb77fe7cb1f45c20d5d85bf8121ae294",
+  "libfilestatx-v1.0.3-nif-2.15-x86_64-unknown-linux-gnu.so.tar.gz" => "sha256:93423ca6b6fd6ec86f3095bafae734679fdbcb0d8ce5f0f5c4f682441a818f8f",
+  "libfilestatx-v1.0.3-nif-2.15-x86_64-unknown-linux-musl.so.tar.gz" => "sha256:86bd32e598c3bb06f4bcb45757861e973a08e3483809c793f7906b490efedf6a",
 }
