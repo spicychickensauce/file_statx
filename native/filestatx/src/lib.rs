@@ -30,7 +30,7 @@ struct FileStatx {
     mode: u32,
 }
 
-#[rustler::nif]
+#[rustler::nif(schedule = "DirtyIo")]
 fn stat(path: String) -> Result<FileStatx, StatError> {
     let metadata = fs::metadata(path).map_err(|err| get_stat_error(&err.kind()))?;
     Ok(FileStatx {
