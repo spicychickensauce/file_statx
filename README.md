@@ -21,7 +21,7 @@ Add `file_statx` to your list of dependencies in `mix.exs`:
 ```elixir
 def deps do
   [
-    {:file_statx, "~> 1.0.2"}
+    {:file_statx, "~> 1.0.3"}
   ]
 end
 ```
@@ -38,7 +38,7 @@ You also need to add `:rustler` to your dependencies.
 
 ## Release
 
-- Bump all versions -> merge to main
+- Bump mix version + readme and cargo (if rust code changed) -> merge to main
 - On Github: releases -> new -> tag: `v{$version}` -> publish
 - Wait for artifacts to build
 - Run `mix rustler_precompiled.download FileStatx --all --print`
